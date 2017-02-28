@@ -54,7 +54,7 @@ class UserTasks(TaskSet):
         """Test zip file generation and download"""
         data = {"stepIndex": "1", "type": "Vert.x", "named": "demo", "topLevelPackage": "com.example", "version": "1.0.0-SNAPSHOT",
                 "vertxVersion": "3.4.0.Beta1", "dependencies": ["Vert.x Mongo Client", "Vert.x (async) JDBC Client", "Vert.x Redis Client", "Vert.x Web Template Engine based on Thymeleaf", "Vert.x (async) RPC service proxies"]}
-        self.client.post("/forge/commands/obsidian-new-project/execute", data)
+        self.client.post("/forge/commands/obsidian-new-project/execute", data, {"timeout": 30000.0})
 
 
 class WebsiteUser(HttpLocust):
